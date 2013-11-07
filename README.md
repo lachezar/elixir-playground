@@ -49,3 +49,14 @@ mix test
 iex -S mix
 ChangeCalc.calc(42)
 ```
+
+# List Utils 
+
+```
+mix test
+# or
+iex -S mix
+Utils.reverse([1,2,3])
+Utils.flatten([1,[2,3]])
+Utils.concat([1], [2,3])
+```
