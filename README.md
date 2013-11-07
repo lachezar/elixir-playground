@@ -40,3 +40,12 @@ mix test
 iex -S mix
 FastFib.fib(42)
 ```
+
+# Calculate Money Change 
+
+```
+mix test
+# or
+iex -S mix
+ChangeCalc.calc(42)
+```
