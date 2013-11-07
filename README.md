@@ -18,3 +18,14 @@ iex --sname "ask" --cookie "secret" -S mix
 Node.connect :"fib@<your computer hostname>"
 Calcaas.start_curiosity
 ```
+
+# Parallel Fibonacci 
+
+Calculating fibonacci in parallel.
+
+```
+mix test
+# or
+iex -S mix
+Fib.pfib([42, 44])
+```
