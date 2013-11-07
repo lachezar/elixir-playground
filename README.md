@@ -29,3 +29,14 @@ mix test
 iex -S mix
 Fib.pfib([42, 44])
 ```
+
+# Fast Fibonacci 
+
+Calculating fibonacci the faster way.
+
+```
+mix test
+# or
+iex -S mix
+FastFib.fib(42)
+```
