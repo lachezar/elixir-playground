@@ -67,4 +67,5 @@ Getting my hands dirty with Dynamo \o/
 
 ```
 mix server
+open http://localhost:4000/fib/12
 ```
