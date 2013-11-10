@@ -60,3 +60,11 @@ Utils.reverse([1,2,3])
 Utils.flatten([1,[2,3]])
 Utils.concat([1], [2,3])
 ```
+
+# Dynamo Web Demo
+
+Getting my hands dirty with Dynamo \o/
+
+```
+mix server
+```
