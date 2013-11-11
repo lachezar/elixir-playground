@@ -15,7 +15,7 @@ defmodule Utils do
 
   # flatten list
   def flatten(l) do
-    reverse(flatten(l, []))
+    l |> flatten([]) |> reverse
   end
 
   def flatten([], r) do
@@ -27,12 +27,12 @@ defmodule Utils do
   end
 
   def flatten([h | t], r) when is_list(h) do
-    flatten(t, concat(flatten(h, []), r))
+    flatten(t, h |> flatten([]) |> concat(r))
   end
 
   # concat lists
   def concat(l, r) do
-    reverse(concat(l, r, []))
+    l |> concat(r, []) |> reverse 
   end
 
   def concat([], [h | r], t) do
