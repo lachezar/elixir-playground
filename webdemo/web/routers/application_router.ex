@@ -18,17 +18,12 @@ defmodule ApplicationRouter do
   end
 
   get "/fib/:n" do
-    n = to_integer(conn.params[:n])
+    {n, _} = conn.params[:n] |> bitstring_to_list |> :string.to_integer
     case n do
       :error -> conn.resp 400, "\"#{conn.params[:n]}\" is not a number :("
       _ ->  
         fibn = Fib.fib(n)
         conn.resp 200, "The #{n} Fibonacci number is #{fibn}"
     end
-  end
-
-  defp to_integer(n) do
-    {result, _} = :string.to_integer(bitstring_to_list(n))
-    result
   end
 end
