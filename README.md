@@ -77,3 +77,11 @@ Example usage of the `|>` operator.
 ```
 mix test
 ```
+
+# Elixir Book "Your turn..." solutions
+
+Sample solutions of the book's exercises.
+
+```
+mix test
+```
