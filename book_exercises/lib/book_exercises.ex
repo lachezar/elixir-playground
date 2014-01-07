@@ -128,4 +128,40 @@ defmodule BookExercises do
   def prime(n) do
     [2, 3] ++ lc x inlist span(5, n), Enum.empty?(lc t inlist span(2, div(x, 2)), rem(x, t) == 0, do: t), do: x
   end
+
+  def fib_stream do
+    Stream.unfold {0, 1}, fn {f1, f2} -> {f1, {f2, f1+f2}} end
+  end
+
+  def printable?(s) do
+    s |> Enum.map(&(&1 in ? ..?~)) |> Enum.all?
+  end
+
+  def anagram?(word1, word2) do
+    Enum.sort(word1) == Enum.sort(word2)
+  end
+
+  def calculate('', n) do
+    n
+  end
+
+  def calculate([h | t], n // 0) when h in ?0..?9 do
+    calculate(t, h - ?0 + n * 10)
+  end
+
+  def calculate([?+ | t], n), do: n + calculate(t)
+  def calculate([?- | t], n), do: n - calculate(t)
+  def calculate([?* | t], n), do: n * calculate(t)
+  def calculate([?/ | t], n), do: n / calculate(t)
+
+  def center(l) do
+    max = l |> Enum.map(&String.length/1) |> Enum.max
+    l |>
+    Enum.sort(&(String.length(&1) < String.length(&2))) |>
+    Enum.map(&(String.rjust(&1, div(max + String.length(&1), 2))))
+  end
+
+  def capitalize_sentences(s) do
+    String.split(s, ". ") |> Enum.map(&String.capitalize/1) |> Enum.join(". ")
+  end
 end

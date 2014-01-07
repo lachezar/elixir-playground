@@ -77,4 +77,35 @@ defmodule BookExercisesTest do
     assert prime(10) == [2, 3, 5, 7]
     assert prime(13) == [2, 3, 5, 7, 11, 13]
   end
+
+  test "fib_stream" do
+    assert Enum.take(fib_stream, 6) == [0, 1, 1, 2, 3, 5]
+  end
+
+  test "printable?" do
+    assert printable? 'asd'
+    assert printable? ''
+    assert not printable? 'asd асд'
+  end
+
+  test "anagram?" do
+    assert anagram? 'this', 'hits'
+    assert not anagram? '', 'wow'
+  end
+
+  test "calculate" do
+    assert calculate('13+24') == 37
+    assert calculate('13-24') == -11
+    assert calculate('10*14') == 140
+    assert calculate('25/10') == 2.5
+    assert calculate('111*0') == 0
+  end
+
+  test "center" do
+    assert center(["caт", "elephant", "зebra"]) == ["  caт", " зebra", "elephant"]
+  end
+
+  test "capitalize_sentences" do
+    assert capitalize_sentences("oh. a DOG. woof. ") == "Oh. A dog. Woof. "
+  end
 end
